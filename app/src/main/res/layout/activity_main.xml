@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#132c33"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check if your data was included in the 2019 Facebook data breach"
+        android:textColor="#F3AA4E"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"
+        android:background="#111820"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Search By"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="150dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/a"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/tvSearch"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Enter something"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/custom_textfield"
+        android:inputType="textNoSuggestions"
+        android:maxLines="1"
+        android:textColor="#FFFF"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:paddingLeft="5dp" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#ff7a00">
+        </Button>
+
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#0090B2">
+        </Button>
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:text="You have been pwned!"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:background="#1b1717"
+            android:textColor="#ce1212"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PHFB Pwned Checker © All Rights Reserved 2019 "
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textColor="#FFFF"
+        android:layout_marginBottom="15dp"
+        />
+
+
+
+
+
+
+</RelativeLayout>
