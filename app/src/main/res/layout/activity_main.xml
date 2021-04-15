@@ -52,7 +52,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Enter something"
+        android:hint="Email | Full Name | Facebook ID | Phone Number"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/custom_textfield"
         android:inputType="textNoSuggestions"

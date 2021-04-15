@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                     result.setVisibility(View.GONE);
                     searchText.setText("");
                 }else if(item.equals("Search By Phone Number")){
-                    searchText.setHint("Enter Your Phone Number");
+                    searchText.setHint("Enter Your Phone Number (format: 63XXXXXXXXXX)");
                     search.setEnabled(true);
                     searchText.setEnabled(true);
                     searchText.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                     search.setEnabled(false);
                     result.setVisibility(View.GONE);
                     searchText.setText("");
+                    searchText.setHint("Email | Full Name | Facebook ID | Phone Number");
                 }
             }
         });
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(searchText.getText().toString().isEmpty()){
-                    Toast.makeText(MainActivity.this,"No Data Found",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"No Valid Input Found",Toast.LENGTH_SHORT).show();
                 }else{
                     new myTask().execute();
                 }
@@ -144,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 searchText.setText("");
                 spinner.setSelectedIndex(0);
                 result.setVisibility(View.GONE);
+                searchText.setHint("Email | Full Name | Facebook ID | Phone Number");
             }
         });
 
@@ -336,7 +338,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
                     result.setVisibility(View.VISIBLE);
-                    result.setText("Good news - you are not pwned");
+                    result.setText("Good news - you are not pwned.\n Your details does not exist in the 2019 data leak." );
                     result.setBackgroundColor(Color.GREEN);
                     result.setTextColor(Color.WHITE);
 
