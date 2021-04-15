@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     searchText.setEnabled(true);
                     searchText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                     result.setVisibility(View.GONE);
+                    searchText.setText("");
                 }else if(item.equals("Search By Facebook ID")){
                     searchText.setVisibility(View.VISIBLE);
                     searchText.setHint("Enter Your Facebook ID");
@@ -96,22 +97,26 @@ public class MainActivity extends AppCompatActivity {
                     searchText.setEnabled(true);
                     searchText.setInputType(InputType.TYPE_CLASS_NUMBER);
                     result.setVisibility(View.GONE);
+                    searchText.setText("");
                 }else if(item.equals("Search By Full Name")){
                     searchText.setHint("Enter Your Full Name");
                     search.setEnabled(true);
                     searchText.setEnabled(true);
                     searchText.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
                     result.setVisibility(View.GONE);
+                    searchText.setText("");
                 }else if(item.equals("Search By Phone Number")){
                     searchText.setHint("Enter Your Phone Number");
                     search.setEnabled(true);
                     searchText.setEnabled(true);
                     searchText.setInputType(InputType.TYPE_CLASS_NUMBER);
                     result.setVisibility(View.GONE);
+                    searchText.setText("");
                 }else{
                     searchText.setEnabled(false);
                     search.setEnabled(false);
                     result.setVisibility(View.GONE);
+                    searchText.setText("");
                 }
             }
         });
@@ -123,7 +128,12 @@ public class MainActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              new myTask().execute();
+
+                if(searchText.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"No Data Found",Toast.LENGTH_SHORT).show();
+                }else{
+                    new myTask().execute();
+                }
 
             }
         });
@@ -262,8 +272,8 @@ public class MainActivity extends AppCompatActivity {
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("About")
                         .setMessage("This app contains leaked data exposed on public database. " +
-                                "The app contains exclusive PH exposed personal data that was posted in a hackers forum. This app will help you check whether your data was part of the" +
-                                " Facebook 2019 data breach. The developer of this app will not take responsibility if anything you do using this application. Use at your own risk!")
+                                "The app contains a total of 899,628 exclusive PH exposed personal data that was posted in a hackers forum. This app will help you check whether your data was part of the" +
+                                " Facebook 2019 data breach. The app is not intended to allow user to view other users personal data.The developer of this app will not take responsibility if anything you do using this application. Use at your own risk!")
                         .setPositiveButton("Ok",null)
                         .show();
                 break;
